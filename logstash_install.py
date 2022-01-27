@@ -104,7 +104,7 @@ def main(argv):
     os.system(" echo '#xpack.monitoring.elasticsearch.ssl.certificate_authority: %s/config/certs/rootCA.crt' >> " %logstash_location + logstash_location + "/config/logstash.yml")
     os.system(" echo 'path.data: %s/app/data' >> " %logstash_location + logstash_location + "/config/logstash.yml")
     os.system(" echo 'path.logs: %s/app/logs' >> " %logstash_location + logstash_location + "/config/logstash.yml")
-    os.system(" echo 'node.name: ls1.log.thailife.com' >> " + logstash_location + "/config/logstash.yml")
+    os.system(" echo 'node.name: ls2.log.thailife.com' >> " + logstash_location + "/config/logstash.yml")
   
   file.close()
   
