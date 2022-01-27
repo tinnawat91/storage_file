@@ -8,7 +8,7 @@ def main(argv):
   url_java = 'https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_linux-x64_bin.tar.gz'
   ki_pkg = url_pkg.split('/')[5]
   java_pkg = url_java.split('/')[6]
-  kibana_location = "/opt/CentralizeLog/kibana_v7.16.3/" + ki_pkg.split('.tar')[0]
+  kibana_location = "/opt/CentralizeLog/elk_v7.16.3/" + ki_pkg.split('.tar')[0]
   kibana_user = "kibana_system"
   kibana_pwd = "7fLTJJrkN7d29JWLMTDO"
   elascticsearch_host = '["http://esm1.log.thailife.com:9200", "http://esm2.log.thailife.com:9200", "http://esm3.log.thailife.com:9200"]'
@@ -78,10 +78,10 @@ def main(argv):
   # Install Kibana
   ###
   print(" Download package ")
-  os.system(" wget " + url_pkg + " -P /opt/CentralizeLog/kibana_v7.16.3")
+  os.system(" wget " + url_pkg + " -P /opt/CentralizeLog/elk_v7.16.3")
 
   print(" Extract package ")
-  os.system(" tar xvfz /opt/CentralizeLog/kibana_v7.16.3/" + ki_pkg + " -C /opt/CentralizeLog/kibana_v7.16.3")
+  os.system(" tar xvfz /opt/CentralizeLog/elk_v7.16.3/" + ki_pkg + " -C /opt/CentralizeLog/elk_v7.16.3")
 
 
   ###
