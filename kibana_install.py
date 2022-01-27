@@ -11,7 +11,7 @@ def main(argv):
   kibana_location = "/opt/CentralizeLog/elk_v7.16.3/" + ki_pkg.split('.tar')[0]
   kibana_user = "kibana_system"
   kibana_pwd = "7fLTJJrkN7d29JWLMTDO"
-  elascticsearch_host = '["http://esm1.log.thailife.com:9200", "http://esm2.log.thailife.com:9200", "http://esm3.log.thailife.com:9200"]'
+  elascticsearch_host = '["http://10.102.48.73:9200", "http://10.102.48.74:9200", "http://10.102.48.75:9200"]'
 
   
 
@@ -107,7 +107,7 @@ def main(argv):
     # os.system(" echo 'elasticsearch.ssl.keyPassphrase: 12345' >> " + kibana_location + "/config/kibana.yml")
     os.system(" echo '#elasticsearch.ssl.certificateAuthorities: %s/config/certs/rootCA.crt' >> " %kibana_location + kibana_location + "/config/kibana.yml")
     os.system(" echo 'path.data: %s/app/data' >> " %kibana_location + kibana_location + "/config/kibana.yml")
-    os.system(" echo 'server.name: ki1.log.thailife.com' >> " + kibana_location + "/config/kibana.yml")
+    os.system(" echo 'server.name: ki2.log.thailife.com' >> " + kibana_location + "/config/kibana.yml")
     os.system(" echo 'server.port: 5601' >> " + kibana_location + "/config/kibana.yml")
     os.system(" echo 'server.host: %s' >> " %ip + kibana_location + "/config/kibana.yml")
     os.system(" echo '#server.ssl.enabled: true' >> " + kibana_location + "/config/kibana.yml")
