@@ -8,10 +8,10 @@ def main(argv):
   url_java = 'https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_linux-x64_bin.tar.gz'
   ls_pkg = url_pkg.split('/')[5]
   java_pkg = url_java.split('/')[6]
-  logstash_location = "/opt/CentralizeLog/logstash_v7.16.3/" + ls_pkg.split('-linux')[0]
+  logstash_location = "/opt/CentralizeLog/elk_v7.16.3/" + ls_pkg.split('-linux')[0]
   logstash_user = "logstash_system"
   logstash_pwd = "HPxznbRHt3KynPOa9cww"
-  elascticsearch_host = '["http://esm1.log.thailife.com:9200", "http://esm2.log.thailife.com:9200", "http://esm3.log.thailife.com:9200"]'
+  elascticsearch_host = '["http://10.102.48.73:9200", "http://10.102.48.74:9200", "http://10.102.48.75:9200"]'
 
   
   ip = subprocess.check_output('hostname -i', shell=True).decode('utf-8')
@@ -77,10 +77,10 @@ def main(argv):
   # Install logstash
   ###
   print(" Download package ")
-  os.system(" wget " + url_pkg + " -P /opt/CentralizeLog/logstash_v7.16.3")
+  os.system(" wget " + url_pkg + " -P /opt/CentralizeLog/elk_v7.16.3")
 
   print(" Extract package ")
-  os.system(" tar xvfz /opt/CentralizeLog/logstash_v7.16.3/" + ls_pkg + " -C /opt/CentralizeLog/logstash_v7.16.3")
+  os.system(" tar xvfz /opt/CentralizeLog/elk_v7.16.3/" + ls_pkg + " -C /opt/CentralizeLog/elk_v7.16.3")
 
 
   ###
