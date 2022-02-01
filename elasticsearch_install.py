@@ -7,7 +7,7 @@ def main(argv):
   # BEGIN cluster's common config 
   ###
 
-  seed_hosts = '["10.102.48.73", "10.102.48.74", "10.102.48.75"]'
+  seed_hosts = '["10.102.48.4", "10.102.48.5", "10.102.48.6"]'
   initial_master_nodes = '["esm1.log.thailife.com", "esm2.log.thailife.com", "esm3.log.thailife.com"]'
   url_pkg = 'https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.16.3-linux-x86_64.tar.gz'
   url_java = 'https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_linux-x64_bin.tar.gz'
