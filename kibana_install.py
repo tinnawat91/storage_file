@@ -11,7 +11,7 @@ def main(argv):
   kibana_location = "/opt/CentralizeLog/elk_v7.16.3/" + ki_pkg.split('.tar')[0]
   kibana_user = "kibana_system"
   kibana_pwd = "qvmVXvYSRtHZYwJiGp1L"
-  elascticsearch_host = '["https://10.102.48.12:9200", "https://10.102.48.4:9200", "https://10.102.48.10:9200"]'
+  elascticsearch_host = '["https://10.102.48.4:9200", "https://10.102.48.5:9200", "https://10.102.48.6:9200"]'
 
   
 
@@ -99,20 +99,19 @@ def main(argv):
     
   if (not added):  
     os.system(" echo 'elasticsearch.hosts: %s' >> " %elascticsearch_host + kibana_location + "/config/kibana.yml")
-    # os.system(" echo 'elasticsearch.ssl.verificationMOde: certificate' >> " + kibana_location + "/config/kibana.yml")
     os.system(" echo 'elasticsearch.username: %s' >> " %kibana_user + kibana_location + "/config/kibana.yml")
     os.system(" echo 'elasticsearch.password: %s' >> " %kibana_pwd + kibana_location + "/config/kibana.yml")
     os.system(" echo 'elasticsearch.ssl.certificate: %s/config/certs/server.crt' >> " %kibana_location + kibana_location + "/config/kibana.yml")
     os.system(" echo 'elasticsearch.ssl.key: %s/config/certs/server.key' >> " %kibana_location + kibana_location + "/config/kibana.yml")
     os.system(" echo 'elasticsearch.ssl.keyPassphrase: 12345' >> " + kibana_location + "/config/kibana.yml")
-    os.system(" echo '#elasticsearch.ssl.certificateAuthorities: %s/config/certs/rootCA.crt' >> " %kibana_location + kibana_location + "/config/kibana.yml")
+    os.system(" echo 'elasticsearch.ssl.certificateAuthorities: %s/config/certs/rootCA.crt' >> " %kibana_location + kibana_location + "/config/kibana.yml")
     os.system(" echo 'path.data: %s/app/data' >> " %kibana_location + kibana_location + "/config/kibana.yml")
     os.system(" echo 'server.name: ki1.log.thailife.com' >> " + kibana_location + "/config/kibana.yml")
-    os.system(" echo 'server.port: 5601' >> " + kibana_location + "/config/kibana.yml")
+    os.system(" echo 'server.port: 8443' >> " + kibana_location + "/config/kibana.yml")
     os.system(" echo 'server.host: %s' >> " %ip + kibana_location + "/config/kibana.yml")
     os.system(" echo 'server.ssl.enabled: true' >> " + kibana_location + "/config/kibana.yml")
-    os.system(" echo 'server.ssl.certificate: %s/config/certs/server.crt' >> " %kibana_location + kibana_location + "/config/kibana.yml")
-    os.system(" echo 'server.ssl.key: %s/config/certs/server.key' >> " %kibana_location + kibana_location + "/config/kibana.yml")
+    os.system(" echo 'server.ssl.certificate: %s/config/certs/kibana.crt' >> " %kibana_location + kibana_location + "/config/kibana.yml")
+    os.system(" echo 'server.ssl.key: %s/config/certs/kibana.key' >> " %kibana_location + kibana_location + "/config/kibana.yml")
     os.system(" echo 'server.ssl.keyPassphrase: 12345' >> " + kibana_location + "/config/kibana.yml")
     os.system(" echo 'server.ssl.certificateAuthorities: %s/config/certs/rootCA.crt' >> " %kibana_location + kibana_location + "/config/kibana.yml")
 
@@ -146,8 +145,8 @@ def main(argv):
   ###
   # Open ports (firewall)
   ###
-  print(" Open port: 5601 ") 
-  os.system(" ufw allow from any to any port 5601 proto tcp")
+  print(" Open port: 8443 ") 
+  os.system(" ufw allow from any to any port 8443 proto tcp")
 
 
 if __name__ == "__main__":
