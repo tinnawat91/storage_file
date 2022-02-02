@@ -103,7 +103,7 @@ def main(argv):
     os.system(" echo 'elasticsearch.password: %s' >> " %kibana_pwd + kibana_location + "/config/kibana.yml")
     os.system(" echo 'elasticsearch.ssl.certificate: %s/config/certs/server.crt' >> " %kibana_location + kibana_location + "/config/kibana.yml")
     os.system(" echo 'elasticsearch.ssl.key: %s/config/certs/server.key' >> " %kibana_location + kibana_location + "/config/kibana.yml")
-    os.system(" echo 'elasticsearch.ssl.keyPassphrase: 12345' >> " + kibana_location + "/config/kibana.yml")
+    os.system(" echo 'elasticsearch.ssl.keyPassphrase: \"12345\"' >> " + kibana_location + "/config/kibana.yml")
     os.system(" echo 'elasticsearch.ssl.certificateAuthorities: %s/config/certs/rootCA.crt' >> " %kibana_location + kibana_location + "/config/kibana.yml")
     os.system(" echo 'path.data: %s/app/data' >> " %kibana_location + kibana_location + "/config/kibana.yml")
     os.system(" echo 'server.name: ki1.log.thailife.com' >> " + kibana_location + "/config/kibana.yml")
@@ -112,7 +112,7 @@ def main(argv):
     os.system(" echo 'server.ssl.enabled: true' >> " + kibana_location + "/config/kibana.yml")
     os.system(" echo 'server.ssl.certificate: %s/config/certs/kibana.crt' >> " %kibana_location + kibana_location + "/config/kibana.yml")
     os.system(" echo 'server.ssl.key: %s/config/certs/kibana.key' >> " %kibana_location + kibana_location + "/config/kibana.yml")
-    os.system(" echo 'server.ssl.keyPassphrase: 12345' >> " + kibana_location + "/config/kibana.yml")
+    os.system(" echo 'server.ssl.keyPassphrase: \"12345\"' >> " + kibana_location + "/config/kibana.yml")
     os.system(" echo 'server.ssl.certificateAuthorities: %s/config/certs/rootCA.crt' >> " %kibana_location + kibana_location + "/config/kibana.yml")
 
   file.close()
