@@ -11,7 +11,7 @@ def main(argv):
   kibana_location = "/opt/CentralizeLog/elk_v7.16.3/" + ki_pkg.split('.tar')[0]
   kibana_user = "kibana_system"
   kibana_pwd = "qvmVXvYSRtHZYwJiGp1L"
-  elascticsearch_host = '["https://10.102.48.4:9200", "https://10.102.48.5:9200", "https://10.102.48.6:9200"]'
+  elascticsearch_host = '["https://T1VMPDSC01A.thailife.com:9200", "https://T1VMPDSC01B.thailife.com:9200", "https://T1VMPDSC01C.thailife.com:9200"]'
 
   
 
