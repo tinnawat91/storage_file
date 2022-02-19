@@ -178,6 +178,7 @@ def main(argv):
     os.system(" echo 'xpack.security.transport.ssl.key_passphrase: 12345' >> " + elasticsearch_location + "/config/elasticsearch.yml")
     os.system(" echo 'xpack.security.transport.ssl.certificate: " + elasticsearch_location + "/config/certs/server.crt' >> " + elasticsearch_location + "/config/elasticsearch.yml")
     os.system(" echo 'xpack.security.transport.ssl.certificate_authorities: " + elasticsearch_location + "/config/certs/rootCA.crt' >> " + elasticsearch_location + "/config/elasticsearch.yml")
+    os.system(" echo 'xpack.security.transport.ssl.verification_mode: certificate' >> " + elasticsearch_location + "/config/elasticsearch.yml")
     os.system(" echo '' >> " + elasticsearch_location + "/config/elasticsearch.yml")
     os.system(" echo 'xpack.security.http.ssl.enabled: true' >> " + elasticsearch_location + "/config/elasticsearch.yml")
     os.system(" echo 'xpack.security.http.ssl.key: " + elasticsearch_location + "/config/certs/server.key' >> " + elasticsearch_location + "/config/elasticsearch.yml")
