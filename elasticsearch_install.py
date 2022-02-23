@@ -7,7 +7,7 @@ def main(argv):
   # BEGIN cluster's common config 
   ###
 
-  seed_hosts = '["10.102.48.73", "10.102.48.74", "10.102.48.75"]'
+  seed_hosts = '["T1VMPDSC01A.thailife.com", "T1VMPDSC01B.thailife.com", "T1VMPDSC01C.thailife.com"]'
   initial_master_nodes = '["esm1.log.thailife.com", "esm2.log.thailife.com", "esm3.log.thailife.com"]'
   url_pkg = 'https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.16.3-linux-x86_64.tar.gz'
   url_java = 'https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_linux-x64_bin.tar.gz'
@@ -175,15 +175,13 @@ def main(argv):
     os.system(" echo 'xpack.security.enabled: true' >> " + elasticsearch_location + "/config/elasticsearch.yml")
     os.system(" echo 'xpack.security.transport.ssl.enabled: true' >> " + elasticsearch_location + "/config/elasticsearch.yml")
     os.system(" echo 'xpack.security.transport.ssl.key: " + elasticsearch_location + "/config/certs/server.key' >> " + elasticsearch_location + "/config/elasticsearch.yml")
-    os.system(" echo 'xpack.security.transport.ssl.key_passphrase: 12345' >> " + elasticsearch_location + "/config/elasticsearch.yml")
     os.system(" echo 'xpack.security.transport.ssl.certificate: " + elasticsearch_location + "/config/certs/server.crt' >> " + elasticsearch_location + "/config/elasticsearch.yml")
     os.system(" echo 'xpack.security.transport.ssl.certificate_authorities: " + elasticsearch_location + "/config/certs/rootCA.crt' >> " + elasticsearch_location + "/config/elasticsearch.yml")
     os.system(" echo 'xpack.security.transport.ssl.verification_mode: certificate' >> " + elasticsearch_location + "/config/elasticsearch.yml")
     os.system(" echo '' >> " + elasticsearch_location + "/config/elasticsearch.yml")
     os.system(" echo 'xpack.security.http.ssl.enabled: true' >> " + elasticsearch_location + "/config/elasticsearch.yml")
-    os.system(" echo 'xpack.security.http.ssl.key: " + elasticsearch_location + "/config/certs/server.key' >> " + elasticsearch_location + "/config/elasticsearch.yml")
-    os.system(" echo 'xpack.security.http.ssl.key_passphrase: 12345' >> " + elasticsearch_location + "/config/elasticsearch.yml")
-    os.system(" echo 'xpack.security.http.ssl.certificate: " + elasticsearch_location + "/config/certs/server.crt' >> " + elasticsearch_location + "/config/elasticsearch.yml")
+    os.system(" echo 'xpack.security.http.ssl.key: " + elasticsearch_location + "/config/certs/web.key' >> " + elasticsearch_location + "/config/elasticsearch.yml")
+    os.system(" echo 'xpack.security.http.ssl.certificate: " + elasticsearch_location + "/config/certs/web.crt' >> " + elasticsearch_location + "/config/elasticsearch.yml")
     os.system(" echo 'xpack.security.http.ssl.certificate_authorities: " + elasticsearch_location + "/config/certs/rootCA.crt' >> " + elasticsearch_location + "/config/elasticsearch.yml")
     
   file.close()
